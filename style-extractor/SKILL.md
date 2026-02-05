@@ -114,6 +114,74 @@ Bei Bildern ohne Quellcode:
 3. Miss Abstände relativ zur Bildgröße
 4. Dokumentiere visuelle Hierarchie
 
+## PDF-Analyse
+
+Bei PDFs als Vorlage (Newsletter, Flyer, Dokumente):
+
+### Strukturelle Analyse
+Analysiere die **Dokumentstruktur** genau:
+
+```
+Checkliste PDF-Layout:
+- [ ] Gibt es eine Überschrift ÜBER dem Header-Banner?
+- [ ] Wie ist der Header aufgebaut (URL, Regionen, Slogan)?
+- [ ] Welches Bullet-Symbol wird verwendet (•, ·, -, ▪)?
+- [ ] Wiederholt sich der Header auf Folgeseiten?
+- [ ] Wie ist der Footer aufgebaut?
+- [ ] Erscheint der Footer auf jeder Seite?
+- [ ] Ein- oder mehrspaltig?
+```
+
+### Typische Dokumenten-Komponenten
+
+| Komponente | Zu prüfen |
+|------------|-----------|
+| **Kategorie-Titel** | Über dem Banner, zentriert, Schriftgröße/Farbe |
+| **Header-Banner** | Hintergrundfarbe, Textfarben, Schriftgrößen |
+| **Hauptslogan** | Größe, Gewicht, Ausrichtung |
+| **Abschnittstitel** | Größe, Farbe, Abstände davor/danach |
+| **Bullet-Points** | Symbol (·, •, -), Einrückung, Fett-Markierungen |
+| **Footer-Banner** | Inhalt, Hintergrund, Position |
+
+### Beispiel: IoT-Wizard Newsletter
+
+Analysiertes Layout aus Original-PDF:
+
+```
+SEITE 1:
+┌────────────────────────────────────────┐
+│ KATEGORIE-TITEL (über Banner)          │  ← 11pt, blau, zentriert
+├────────────────────────────────────────┤
+│ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │  ← Blauer Header-Banner
+│ IOT-WIZARD.AT   Bundesländer           │  ← 9pt + 7pt, weiß
+│     ENERGIE INTELLIGENT MANAGEN        │  ← 22pt, weiß, zentriert
+│ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │
+├────────────────────────────────────────┤
+│ UNTERÜBERSCHRIFT                       │  ← 14pt, blau
+├────────────────────────────────────────┤
+│ Fließtext...                           │  ← 10pt, grau, Blocksatz
+│                                        │
+│ · Bullet mit fettem Anfang: Text...    │  ← Middle-Dot (·), nicht •
+│ · Weiterer Bullet-Point...             │
+├────────────────────────────────────────┤
+│ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │  ← Blauer Footer-Banner
+│      ENERGIE INTELLIGENT MANAGEN       │  ← 8pt, weiß, rechts
+│                       IoT-Wizard       │  ← 12pt, weiß, kursiv
+│ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │
+└────────────────────────────────────────┘
+
+SEITE 2+:
+- Header-Banner wiederholt (ohne Kategorie-Titel)
+- Footer-Banner wiederholt
+```
+
+### Wichtige Details bei PDFs
+
+1. **Bullet-Symbole**: Standard-Bullets (•) vs. Middle-Dot (·) - großer visueller Unterschied!
+2. **Wiederholende Elemente**: Header/Footer müssen auf jeder Seite erscheinen
+3. **Hierarchie über Banner**: Manche Dokumente haben Titel ÜBER dem farbigen Banner
+4. **Seitenumbrüche**: Content-Aufteilung auf Seiten beachten
+
 ## Qualitätskriterien
 
 Ein guter Styleguide enthält:
