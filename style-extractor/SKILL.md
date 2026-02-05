@@ -143,37 +143,52 @@ Checkliste PDF-Layout:
 | **Bullet-Points** | Symbol (·, •, -), Einrückung, Fett-Markierungen |
 | **Footer-Banner** | Inhalt, Hintergrund, Position |
 
-### Beispiel: IoT-Wizard Newsletter
+### Beispiel: IoT-Wizard / COMM-UNITY Newsletter
 
-Analysiertes Layout aus Original-PDF:
+Analysiertes Layout aus Original-PDF (Screenshot-Analyse):
+
+**FARBEN:**
+- Primärfarbe: GRÜN/TEAL #0D7377 (NICHT Blau!)
+- Akzentfarbe: GOLD #C4A962 (Linie am Banner)
+- Text: Dunkelgrau #333333
+- Hintergrund: Weiß mit subtilen Wellenlinien
 
 ```
 SEITE 1:
 ┌────────────────────────────────────────┐
-│ KATEGORIE-TITEL (über Banner)          │  ← 11pt, blau, zentriert
+│ ENERGIE INTELLIGENT MANAGEN  [LOGO]    │  ← Header: 9pt grün links, Wizard-Icon rechts
+│ IoT-Wizard                             │  ← 8pt grün
 ├────────────────────────────────────────┤
-│ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │  ← Blauer Header-Banner
-│ IOT-WIZARD.AT   Bundesländer           │  ← 9pt + 7pt, weiß
-│     ENERGIE INTELLIGENT MANAGEN        │  ← 22pt, weiß, zentriert
-│ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │
-├────────────────────────────────────────┤
-│ UNTERÜBERSCHRIFT                       │  ← 14pt, blau
-├────────────────────────────────────────┤
-│ Fließtext...                           │  ← 10pt, grau, Blocksatz
 │                                        │
-│ · Bullet mit fettem Anfang: Text...    │  ← Middle-Dot (·), nicht •
-│ · Weiterer Bullet-Point...             │
+│ ENERGIE INTELLIGENT MANAGEN            │  ← 28pt, GRÜN, Großbuchstaben
+│ WIE DER IOT-WIZARD IHR HOTEL...        │  ← 12pt, grün, Großbuchstaben
+│                                        │
+│ Einleitungstext in dunkelgrau...       │  ← 10pt, Blocksatz
+│                                        │
+│ ▌▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │  ← Grüner Banner mit GOLDENER Linie links
+│ ▌  ABSCHNITTSTITEL IN WEISS           │  ← 11pt, weiß, Großbuchstaben
+│ ▌▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │
+│                                        │
+│ • Fetter Anfang: Normaler Text...      │  ← Bullet-Point
+│ • Weiterer Punkt: Text...              │
+│                                        │
 ├────────────────────────────────────────┤
-│ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │  ← Blauer Footer-Banner
-│      ENERGIE INTELLIGENT MANAGEN       │  ← 8pt, weiß, rechts
-│                       IoT-Wizard       │  ← 12pt, weiß, kursiv
+│ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │  ← Grüner Footer
+│ COMM-UNITY  📍Standorte  IOT-WIZARD.AT │  ← Logo links, Standorte mitte, URL rechts
 │ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │
 └────────────────────────────────────────┘
 
 SEITE 2+:
-- Header-Banner wiederholt (ohne Kategorie-Titel)
-- Footer-Banner wiederholt
+- Header wiederholt (gleich wie Seite 1)
+- Weitere Abschnitts-Banner mit goldener Linie
+- Footer wiederholt
 ```
+
+**WICHTIGE ERKENNTNISSE:**
+1. Farbe ist GRÜN/TEAL, nicht Blau!
+2. Abschnitts-Banner haben GOLDENE Akzentlinie links
+3. Footer enthält COMM-UNITY Logo (nicht nur "IoT-Wizard")
+4. Header ist klein oben links, nicht als großes Banner
 
 ### Wichtige Details bei PDFs
 
