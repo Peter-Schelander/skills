@@ -204,6 +204,85 @@ font-family:\s*[^;]+
 
 ---
 
+---
+
+## Methode 6: PDF-Dokumente
+
+Für die Reproduktion von PDF-Designs in Word/DOCX.
+
+### KRITISCHE LIMITIERUNG
+
+```
+⚠️ PDF-Text-Extraktion (Read-Tool) liefert NUR Text!
+   - KEINE Farben
+   - KEINE Schriftarten  
+   - KEIN Layout
+   - KEINE Abstände
+   
+   → Screenshot ist PFLICHT für Style-Analyse
+```
+
+### Workflow
+
+```
+1. Screenshot anfordern
+   → "Bitte hänge einen Screenshot der PDF an"
+   → Ohne Screenshot KEINE Analyse möglich
+
+2. Visuelle Analyse aus Screenshot
+   → Farben identifizieren (HEX-Codes schätzen)
+   → Schriftart erkennen (Serif/Sans-Serif, Merkmale)
+   → Layout-Struktur verstehen
+
+3. Benutzer-Validierung
+   → Bei Unsicherheit FRAGEN statt raten
+   → "Ist die Farbe eher #0D7377 oder #00A651?"
+   → "Welche Schriftart wird verwendet?"
+
+4. Styleguide dokumentieren
+   → Alle Werte tabellarisch festhalten
+   → Komponenten beschreiben (Header, Banner, Footer)
+
+5. Word-Dokument erstellen
+   → python-docx verwenden
+   → Template: output-templates/docx-template.md
+```
+
+### Typische Farben zum Referenzieren
+
+| Farbe | HEX | Beispiel |
+|-------|-----|----------|
+| Teal/Petrol | #0D7377 | IoT-Wizard |
+| Blau | #0066B3 | Corporate Blue |
+| Grün | #00A651 | Eco/Energie |
+| Gold | #C4A962 | Akzent/Premium |
+| Dunkelgrau | #333333 | Fließtext |
+
+### Benutzer-Abfrage Template
+
+Wenn unsicher, verwende diese Fragen:
+
+```
+Farben:
+"Die Primärfarbe sieht aus wie Teal/Grün. 
+Kannst du bestätigen ob es eher #0D7377 oder ein anderer Wert ist?"
+
+Schriftart:
+"Die Schriftart scheint eine moderne Sans-Serif zu sein.
+Weißt du welche verwendet wird? Falls nicht, verwende ich Calibri."
+
+Logo:
+"Im Original sehe ich ein Logo. 
+Hast du die Datei als PNG/SVG, oder soll ich es weglassen?"
+```
+
+### Output
+
+Für PDF → Word verwende das DOCX-Template:
+- [docx-template.md](output-templates/docx-template.md)
+
+---
+
 ## Priorisierung der Methoden
 
 ```
@@ -214,6 +293,7 @@ Ist es eine Live-Webseite?
 │       ├─ Ja → Browser-Methode
 │       └─ Nein → WebFetch (schneller)
 └─ Nein → Was hast du?
+          ├─ PDF → Screenshot anfordern! Dann PDF-Methode
           ├─ Screenshot → Screenshot-Analyse
           ├─ Figma-Link → Figma-Analyse
           └─ Lokale Dateien → Datei-Analyse

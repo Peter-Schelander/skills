@@ -1,6 +1,6 @@
 ---
 name: style-extractor
-description: Extrahiert Design-Styleguides aus Webseiten, Screenshots oder Dateien. Analysiert Farbpaletten, Typografie, Abstände, UI-Komponenten und Layout. Verwenden wenn der Benutzer "im Stil von", "Style extrahieren", "Design übernehmen", "Styleguide erstellen", "Farbschema analysieren" oder "Look and Feel" erwähnt.
+description: Extrahiert Design-Styleguides aus Webseiten, Screenshots, PDFs oder Dateien. Analysiert Farbpaletten, Typografie, Abstände, UI-Komponenten und Layout. Verwenden wenn der Benutzer "im Stil von", "Style extrahieren", "Design übernehmen", "Styleguide erstellen", "Farbschema analysieren", "Look and Feel", "PDF im Stil von", "Word-Dokument wie", "Newsletter im Design von" oder "Dokument reproduzieren" erwähnt.
 ---
 
 # Style Extractor
@@ -20,8 +20,37 @@ Extrahiere komplette Design-Systeme aus bestehenden Webseiten, Screenshots oder 
 | Live-Browser | `browser_snapshot` + CSS-Analyse | Interaktive Webseiten |
 | URL | `WebFetch` + HTML/CSS-Parsing | Statische Seiten |
 | Screenshot | Visuelle Analyse | Designs ohne Quellcode |
+| **PDF** | **Screenshot + Benutzer-Abfrage** | **Dokument-Reproduktion** |
 | Figma | API oder Export-Analyse | Design-Handoffs |
 | Lokale Dateien | Direkte Datei-Analyse | Bestehende Projekte |
+
+---
+
+## PDF-Analyse (WICHTIG)
+
+```
+⚠️ KRITISCH: PDF-Text-Extraktion liefert KEINE visuellen Daten!
+```
+
+Bei PDFs gilt ein spezieller Workflow:
+
+1. **SCREENSHOT PFLICHT** - Ohne Screenshot: KEINE Farben, KEINE Schriften, KEIN Layout
+2. **BENUTZER FRAGEN** - Bei Unsicherheit nachfragen statt raten
+3. **LOGOS SEPARAT** - Nach Original-Dateien fragen (PNG/SVG)
+4. **DOCX OUTPUT** - Für Word-Dokumente eigenes Template verwenden
+
+**Workflow:**
+```
+1. Screenshot anfordern → "Bitte hänge einen Screenshot der PDF an"
+2. Visuelle Analyse    → Farben, Schriften, Layout aus Screenshot
+3. Validierung         → Bei Unsicherheit den Benutzer fragen
+4. Dokumentieren       → Styleguide erstellen
+5. Implementieren      → Mit python-docx für Word-Output
+```
+
+**Siehe:** [pdf-analysis.md](pdf-analysis.md) für den vollständigen Workflow
+
+---
 
 ## Extraktions-Workflow
 
@@ -87,6 +116,7 @@ Wähle das passende Format:
 | Modernes CSS | CSS Custom Properties | [css-variables.md](output-templates/css-variables.md) |
 | Tailwind-Projekt | Tailwind Config | [tailwind-config.md](output-templates/tailwind-config.md) |
 | Maschinenlesbar | JSON Styleguide | [styleguide-json.md](output-templates/styleguide-json.md) |
+| **Word/DOCX** | **python-docx** | [docx-template.md](output-templates/docx-template.md) |
 | Dokumentation | Markdown | Inline generieren |
 | SCSS-Projekt | SCSS Variables | Analog zu CSS Variables |
 
@@ -212,14 +242,22 @@ Ein guter Styleguide enthält:
 
 Der Skill wird automatisch aktiviert bei:
 
+**Web-Design:**
 - "Erstelle mir eine Webseite im Stil von [URL]"
 - "Extrahiere das Farbschema von dieser Seite"
 - "Analysiere das Design und erstelle einen Styleguide"
 - "Übernimm den Look and Feel von [Quelle]"
 - "Welche Schriftarten verwendet diese Webseite?"
 
+**Dokument-Reproduktion (PDF → Word):**
+- "Erstelle ein Word-Dokument im Stil dieser PDF"
+- "Newsletter im Design von [PDF] erstellen"
+- "Dokument reproduzieren wie das Original"
+- "PDF-Stil auf neuen Text anwenden"
+
 ## Zusätzliche Ressourcen
 
+- [PDF-Analyse Workflow](pdf-analysis.md) - **Wichtig für Dokument-Reproduktion**
 - [Extraktions-Methoden im Detail](extraction-methods.md)
 - [Output-Templates](output-templates/)
 - [Beispiel-Output](examples/example-output.md)
